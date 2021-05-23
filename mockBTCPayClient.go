@@ -1,6 +1,8 @@
 package six910btcplugin
 
 import (
+	"log"
+
 	cl "github.com/Ulbora/BTCPayClient"
 )
 
@@ -16,6 +18,11 @@ type MockBTCPayClient struct {
 //New New
 func (a *MockBTCPayClient) New() cl.Client {
 	return a
+}
+
+//SetLogLevel SetLogLevel
+func (a *MockBTCPayClient) SetLogLevel(level int) {
+	log.Println("Setting log level on mock to ", level)
 }
 
 //GetClientID GetClientID

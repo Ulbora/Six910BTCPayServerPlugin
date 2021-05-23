@@ -150,3 +150,11 @@ func TestPayPlugin_CreateInvoice(t *testing.T) {
 	// t.Fail()
 
 }
+
+func TestPayPlugin_SetLogLevel(t *testing.T) {
+	var ppi PayPlugin
+	var mc MockBTCPayClient
+	ppi.SetClient(mc.New())
+	p := ppi.New()
+	p.SetLogLevel(3)
+}

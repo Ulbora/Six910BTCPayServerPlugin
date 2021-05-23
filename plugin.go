@@ -17,6 +17,7 @@ type Plugin interface {
 	SetClient(c cl.Client)
 	NewPairConnect(host string) *BTCPay
 	CreateInvoice(inv *cl.InvoiceReq) *cl.InvoiceResponse
+	SetLogLevel(level int)
 }
 
 //PayPlugin PayPlugin
@@ -32,6 +33,7 @@ type BTCPay struct {
 	PrivateKey string
 	Token      string
 	Host       string
+	PairingURL string
 }
 
 //New New
@@ -40,6 +42,12 @@ func (p *PayPlugin) New() Plugin {
 	l.LogLevel = lg.AllLevel
 	p.log = &l
 	return p
+}
+
+//SetLogLevel SetLogLevel
+func (p *PayPlugin) SetLogLevel(level int) {
+	p.log.LogLevel = level
+	p.Client.SetLogLevel(level)
 }
 
 //SetClient SetClient
@@ -105,6 +113,7 @@ func (p *PayPlugin) NewPairConnect(host string) *BTCPay {
 	rtn.PrivateKey = pkh
 	rtn.PublicKey = pub
 	rtn.Token = resp.Data[0].Token
+	rtn.PairingURL = pairingURL
 
 	return &rtn
 
