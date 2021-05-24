@@ -1,14 +1,4 @@
 mode: set
-github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:19.44,21.2 1 1
-github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:24.51,26.2 1 1
-github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:29.49,31.2 1 1
-github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:34.74,36.2 1 1
-github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:39.70,41.2 1 1
-github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:44.70,46.2 1 1
-github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:49.94,51.2 1 1
-github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:54.82,56.2 1 1
-github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:59.77,61.2 1 1
-github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:64.86,66.2 1 1
 github.com/Ulbora/Six910BTCPayServerPlugin/plugin.go:43.34,48.2 4 1
 github.com/Ulbora/Six910BTCPayServerPlugin/plugin.go:51.44,54.2 2 1
 github.com/Ulbora/Six910BTCPayServerPlugin/plugin.go:57.44,59.2 1 1
@@ -28,3 +18,13 @@ github.com/Ulbora/Six910BTCPayServerPlugin/plugin.go:163.43,165.53 2 1
 github.com/Ulbora/Six910BTCPayServerPlugin/plugin.go:168.2,168.12 1 1
 github.com/Ulbora/Six910BTCPayServerPlugin/plugin.go:165.53,167.3 1 1
 github.com/Ulbora/Six910BTCPayServerPlugin/plugin.go:172.39,174.2 1 1
+github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:19.44,21.2 1 1
+github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:24.51,26.2 1 1
+github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:29.49,31.2 1 1
+github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:34.74,36.2 1 1
+github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:39.70,41.2 1 1
+github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:44.70,46.2 1 1
+github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:49.94,51.2 1 1
+github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:54.82,56.2 1 1
+github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:59.77,61.2 1 1
+github.com/Ulbora/Six910BTCPayServerPlugin/mockBTCPayClient.go:64.86,66.2 1 1
