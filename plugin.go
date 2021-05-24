@@ -18,12 +18,15 @@ type Plugin interface {
 	NewPairConnect(host string) *BTCPay
 	CreateInvoice(inv *cl.InvoiceReq) *cl.InvoiceResponse
 	SetLogLevel(level int)
+	IsPluginLoaded() bool
+	GetToken() string
 }
 
 //PayPlugin PayPlugin
 type PayPlugin struct {
 	Client cl.Client
 	log    *lg.Logger
+	token  string
 }
 
 //BTCPay BTCPay
@@ -74,6 +77,7 @@ func (p *PayPlugin) NewClient(btc *BTCPay) Plugin {
 	ptc.SetHeader(head)
 
 	p.getNewClient(btc.Host, kp, btc.Token)
+	p.token = btc.Token
 
 	return p
 }
@@ -114,6 +118,7 @@ func (p *PayPlugin) NewPairConnect(host string) *BTCPay {
 	rtn.PublicKey = pub
 	rtn.Token = resp.Data[0].Token
 	rtn.PairingURL = pairingURL
+	p.token = resp.Data[0].Token
 
 	return &rtn
 
@@ -134,6 +139,7 @@ func (p *PayPlugin) getNewClient(host string, kp *ecdsa.PrivateKey, token string
 		var head cl.Headers
 		ptc.SetHeader(head)
 		p.Client = ptc.New(host, kp, token)
+		p.token = token
 	}
 }
 
@@ -151,6 +157,20 @@ func (p *PayPlugin) secureRandom(size int32) string {
 		rtn = hex.EncodeToString(bytes)
 	}
 	return rtn
+}
+
+//IsPluginLoaded IsPluginLoaded
+func (p *PayPlugin) IsPluginLoaded() bool {
+	var rtn bool
+	if p.Client != nil && p.Client.GetClientID() != "" {
+		rtn = true
+	}
+	return rtn
+}
+
+//GetToken GetToken
+func (p *PayPlugin) GetToken() string {
+	return p.token
 }
 
 // go mod init github.com/Ulbora/Six910BTCPayServerPlugin
