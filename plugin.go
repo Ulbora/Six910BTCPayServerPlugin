@@ -51,7 +51,9 @@ func (p *PayPlugin) New() Plugin {
 //SetLogLevel SetLogLevel
 func (p *PayPlugin) SetLogLevel(level int) {
 	p.log.LogLevel = level
-	p.Client.SetLogLevel(level)
+	if p.Client != nil {
+		p.Client.SetLogLevel(level)
+	}
 }
 
 //SetClient SetClient
