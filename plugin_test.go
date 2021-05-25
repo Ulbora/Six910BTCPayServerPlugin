@@ -132,7 +132,9 @@ func TestPayPlugin_CreateInvoice(t *testing.T) {
 
 	ppi.SetClient(mc.New())
 
-	c := ppi.NewClient(&btc)
+	c := ppi.New()
+
+	c.NewClient(&btc)
 
 	var req cl.InvoiceReq
 	req.Price = 100.00

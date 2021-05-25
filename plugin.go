@@ -16,6 +16,7 @@ import (
 type Plugin interface {
 	SetClient(c cl.Client)
 	NewPairConnect(host string) *BTCPay
+	NewClient(btc *BTCPay) Plugin
 	CreateInvoice(inv *cl.InvoiceReq) *cl.InvoiceResponse
 	SetLogLevel(level int)
 	IsPluginLoaded() bool
