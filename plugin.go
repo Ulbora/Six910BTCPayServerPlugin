@@ -43,7 +43,7 @@ type BTCPay struct {
 //New New
 func (p *PayPlugin) New() Plugin {
 	var l lg.Logger
-	l.LogLevel = lg.AllLevel
+	l.LogLevel = lg.OffLevel
 	p.log = &l
 	return p
 }
@@ -64,7 +64,7 @@ func (p *PayPlugin) SetClient(c cl.Client) {
 //NewClient NewClient
 func (p *PayPlugin) NewClient(btc *BTCPay) Plugin {
 	var l lg.Logger
-	l.LogLevel = lg.AllLevel
+	l.LogLevel = lg.OffLevel
 	p.log = &l
 
 	var cryt cl.Cryptography
