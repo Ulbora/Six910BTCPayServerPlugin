@@ -41,6 +41,8 @@ github.com/Ulbora/BTCPayClient v1.0.0 h1:hQByHlGBPmST3mQRJUXKhd8vUjxvJuLz5IMxWnA
 github.com/Ulbora/BTCPayClient v1.0.0/go.mod h1:9+M6EUN5UQJs0nUvk8E2b7yJ5a/XJzLkiOLdC5xTHDU=
 github.com/Ulbora/BTCPayClient v1.0.1 h1:f2BQ3ShK132a4/2ji0Tq1NU9PiQkensp519ghBE9Jz4=
 github.com/Ulbora/BTCPayClient v1.0.1/go.mod h1:9+M6EUN5UQJs0nUvk8E2b7yJ5a/XJzLkiOLdC5xTHDU=
+github.com/Ulbora/BTCPayClient v1.0.2 h1:QeiS9kzOlqyptKudLuIU89gCyx9jv5jxeiY31/gcqqQ=
+github.com/Ulbora/BTCPayClient v1.0.2/go.mod h1:9+M6EUN5UQJs0nUvk8E2b7yJ5a/XJzLkiOLdC5xTHDU=
 github.com/Ulbora/GoProxy v1.0.1 h1:7gFPaJdXDV3tFDSWYxpQx7SQmNKcZPrv4SMwxa+vFhA=
 github.com/Ulbora/GoProxy v1.0.1/go.mod h1:8qICy+U1tSywRYoy9RdP+Zm6G2nN2K1YcvMupVlkIYI=
 github.com/Ulbora/Level_Logger v1.0.2 h1:uhuNi1oSQ1zSDhuYQS7NEHqtR4lAYPGyW2XGwJZtxmk=
