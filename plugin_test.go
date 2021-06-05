@@ -49,6 +49,32 @@ func TestPayPlugin_Connect(t *testing.T) {
 
 }
 
+func TestPayPlugin_ConnectFail(t *testing.T) {
+	var ppi PayPlugin
+
+	p := ppi.New()
+
+	var mc MockBTCPayClient
+	mc.MockClientID = "eeeddd"
+	var tknr cl.TokenResponse
+	var tkn cl.TokenData
+	tkn.Token = "1123aaa"
+	tkn.ParingCode = "pa111"
+	//tknr.Data = []cl.TokenData{tkn}
+	mc.MockTokenResponse = &tknr
+	mc.MockPairingCodeURL = "http://test.com/pair/123"
+	p.SetClient(mc.New())
+
+	btc := p.NewPairConnect(testBaseURL)
+	fmt.Println("btc: ", *btc)
+	if btc.PrivateKey != "" || p.GetToken() != "" {
+		t.Fail()
+	}
+
+	// t.Fail()
+
+}
+
 func TestPayPlugin_NewClient(t *testing.T) {
 	var pkh = "74f522c6704e39d102db6ae98dfb286e11c678a76fa32c93cc50244e436d936f"
 	var pubk = "022709b094ef015db670278fb7bcbf90d35c5e3ed11094ce6ccd43f9458fc91c22"

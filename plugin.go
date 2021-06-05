@@ -96,6 +96,7 @@ func (p *PayPlugin) NewPairConnect(host string) *BTCPay {
 	pub := cc.GetPublicKey(kp)
 	p.log.Debug("private key: ", pkh)
 	p.log.Debug("public key: ", pub)
+	p.log.Debug("host: ", host)
 
 	p.log.Debug("client: ", p.Client)
 
@@ -111,17 +112,19 @@ func (p *PayPlugin) NewPairConnect(host string) *BTCPay {
 	var pairingURL string
 	if len(resp.Data) > 0 {
 		pairingURL = p.Client.GetPairingCodeRequest(resp.Data[0].ParingCode)
+		p.log.Debug("ClientID: ", p.Client.GetClientID())
+		p.log.Debug("token: ", resp.Data[0].Token)
+		p.log.Debug("pairing url: ", pairingURL)
+		rtn.ClientID = p.Client.GetClientID()
+		rtn.Host = host
+		rtn.PrivateKey = pkh
+		rtn.PublicKey = pub
+		rtn.Token = resp.Data[0].Token
+		rtn.PairingURL = pairingURL
+		p.token = resp.Data[0].Token
+	} else {
+		p.Client = nil
 	}
-	p.log.Debug("ClientID: ", p.Client.GetClientID())
-	p.log.Debug("token: ", resp.Data[0].Token)
-	p.log.Debug("pairing url: ", pairingURL)
-	rtn.ClientID = p.Client.GetClientID()
-	rtn.Host = host
-	rtn.PrivateKey = pkh
-	rtn.PublicKey = pub
-	rtn.Token = resp.Data[0].Token
-	rtn.PairingURL = pairingURL
-	p.token = resp.Data[0].Token
 
 	return &rtn
 
