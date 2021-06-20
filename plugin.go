@@ -5,6 +5,7 @@ import (
 	"crypto/ecdsa"
 	"crypto/rand"
 	"encoding/hex"
+	"log"
 
 	lg "github.com/Ulbora/Level_Logger"
 
@@ -79,6 +80,11 @@ func (p *PayPlugin) NewClient(btc *BTCPay) Plugin {
 	var head cl.Headers
 	ptc.SetHeader(head)
 
+	log.Println("host in plugin: ", btc.Host)
+	log.Println("public key: ", pub)
+	log.Println("kp in plugin: ", kp)
+	log.Println("btc.Token in plugin: ", btc.Token)
+
 	p.getNewClient(btc.Host, kp, btc.Token)
 	p.token = btc.Token
 
@@ -96,7 +102,14 @@ func (p *PayPlugin) NewPairConnect(host string) *BTCPay {
 	pub := cc.GetPublicKey(kp)
 	p.log.Debug("private key: ", pkh)
 	p.log.Debug("public key: ", pub)
+
+	log.Println("private key: ", pkh)
+	log.Println("public key: ", pub)
+	log.Println("key pair: ", kp)
+
 	p.log.Debug("host: ", host)
+
+	log.Println("host: ", host)
 
 	p.log.Debug("client: ", p.Client)
 
@@ -104,6 +117,7 @@ func (p *PayPlugin) NewPairConnect(host string) *BTCPay {
 
 	var tkr cl.TokenRequest
 	tkr.ID = p.Client.GetClientID() // cc.GetSinFromKey(kp)
+	log.Println("GetClientID: ", p.Client.GetClientID())
 	tkr.Label = "Six910 access"
 	tkr.Facade = "merchant"
 
@@ -115,6 +129,8 @@ func (p *PayPlugin) NewPairConnect(host string) *BTCPay {
 		p.log.Debug("ClientID: ", p.Client.GetClientID())
 		p.log.Debug("token: ", resp.Data[0].Token)
 		p.log.Debug("pairing url: ", pairingURL)
+		log.Println("pairing url: ", pairingURL)
+
 		rtn.ClientID = p.Client.GetClientID()
 		rtn.Host = host
 		rtn.PrivateKey = pkh

@@ -172,6 +172,8 @@ func TestPayPlugin_CreateInvoice(t *testing.T) {
 	res := c.CreateInvoice(&req)
 	fmt.Println("inv res url: ", res.Data.URL)
 	fmt.Println("inv req: ", req)
+	fmt.Println("inv res: ", res)
+
 	if res.Data.URL != "http://test" {
 		t.Fail()
 	}
