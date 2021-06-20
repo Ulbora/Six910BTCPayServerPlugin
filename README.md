@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/Ulbora/Six910BTCPayServerPlugin.svg?branch=master)](https://travis-ci.org/Ulbora/Six910BTCPayServerPlugin)
+[![Build Status](https://travis-ci.com/Ulbora/Six910BTCPayServerPlugin.svg?branch=master)](https://travis-ci.com/Ulbora/Six910BTCPayServerPlugin)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Six910BTCPayServerPlugin&metric=alert_status)](https://sonarcloud.io/dashboard?id=Six910BTCPayServerPlugin)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Ulbora/Six910BTCPayServerPlugin)](https://goreportcard.com/report/github.com/Ulbora/Six910BTCPayServerPlugin)
 
